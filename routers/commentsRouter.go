@@ -133,4 +133,12 @@ func init() {
                 Filters: nil,
                 Params: nil})
 
+	beego.GlobalControllerRouter["beego/controllers:UsersController"] = append(beego.GlobalControllerRouter["beego/controllers:UsersController"],
+			beego.ControllerComments{
+				Method: "DeleteUser",
+				Router: `/:id`,
+				AllowHTTPMethods: []string{"delete"},
+				MethodParams: param.Make(),
+				Filters: nil,
+				Params: nil})
 }

@@ -35,6 +35,11 @@ func init() {
 				&controllers.UsersController{},
 			),
 		),
+		beego.NSNamespace("/users/delete",
+			beego.NSInclude(
+				&controllers.UsersController{},
+			),
+		),
 	)
 	beego.AddNamespace(ns)
 }

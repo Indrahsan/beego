@@ -47,3 +47,14 @@ func InsertOneUser(user Users) *Users {
 
 	return &u
 }
+
+func DeleteUsers(id int) bool {
+	o := orm.NewOrm()
+	_, err := o.Delete(&Users{Id: id})
+	if err == nil {
+		// successfull
+		return true
+	}
+
+	return false
+}
